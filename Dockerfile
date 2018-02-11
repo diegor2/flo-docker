@@ -18,4 +18,4 @@ RUN git clone https://github.com/florincoin/florincoin.git /flo
 WORKDIR /flo
 
 RUN CPUS="$(lscpu -p | grep -v '#' | wc -l)"; \
-	./autogen.sh && ./configure && make -j$CPUS
+	./autogen.sh && ./configure --without-gui && make -j$CPUS
